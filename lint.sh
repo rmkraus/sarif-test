@@ -6,7 +6,7 @@ echo '''
     {
       "tool": {
         "driver": {
-          "name": "Code Critic",
+          "name": "Code Scanner",
           "rules": [
             {
               "id": "low"

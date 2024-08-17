@@ -1,0 +1,27 @@
+name: code scanner
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  nvcc:
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+      pull-requests: write
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: code scanner
+        run: /bin/bash lint.sh > results.sarif
+      - name: upload results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
+

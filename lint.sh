@@ -9,13 +9,13 @@ echo '''
           "name": "Code Scanner",
           "rules": [
             {
-              "id": "low"
+              "id": "low",
               "properties" : {
                  "id" : "low",
                  "kind" : "low",
                  "name" : "low",
                  "problem.severity" : "low",
-                 "security-severity" : "1",
+                 "security-severity" : "1"
                }
             }
           ]
@@ -40,7 +40,7 @@ echo '''
                 }
               }
             }
-          ],
+          ]
         }
       ]
     }
